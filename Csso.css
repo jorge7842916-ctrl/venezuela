@@ -1,0 +1,101 @@
+CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+/* El truco para poner los botones a un lado y el contenido al otro */
+.contenedor-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Estilos de la barra lateral (izquierda) */
+.barra-lateral {
+    width: 300px;
+    background: #2c3e50;
+    padding: 2rem 1.5rem;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.barra-lateral h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Lista de botones vertical */
+.menu-estados {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo individual de cada botón */
+.tarjeta {
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 18px 15px;
+    text-align: center;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover {
+    background: #2980b9;
+    transform: translateX(5px); /* Pequeño efecto de movimiento al pasar el cursor */
+}
+
+/* Estilos del contenido del centro (derecha) */
+.contenido-central {
+    flex: 1; /* Ocupa todo el espacio restante de la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    padding: 2rem;
+    text-align: center;
+}
+
+.contenido-central h1 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+/* Estilo para que la imagen se vea perfecta y no se deforme */
+.imagen-central {
+    max-width: 80%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Hace que en pantallas de teléfonos los botones se pongan arriba y el contenido abajo */
+@media (max-width: 768px) {
+    .contenedor-layout {
+        flex-direction: column;
+    }
+    .barra-lateral {
+        width: 100%;
+        min-height: auto;
+    }
+    .contenido-central h1 {
+        font-size: 2rem;
+    }
+}
